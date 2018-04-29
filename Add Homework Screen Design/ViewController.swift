@@ -8,7 +8,9 @@
 
 import UIKit
 
-class AddHomework: UIViewController {
+class AddHomework: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+   
+   
 
     //Homework Title
     var homeworkName: String = ""
@@ -17,7 +19,6 @@ class AddHomework: UIViewController {
     
     //Class Name
     var className: String = ""
-    @IBOutlet weak var classNameTextField: UITextField!
     
     //Teacher
     var teacher: String = ""
@@ -41,11 +42,11 @@ class AddHomework: UIViewController {
     
     @IBOutlet weak var classNamePicker: UIPickerView!
     
+    var pickerData: [String] = [String]()
+    
     //DONE
     @IBAction func DoneButton(_ sender: Any) {
         homeworkName = homeworkTitle.text!
-        
-        className = classNameTextField.text!
         
         teacher = teacherTextField.text!
         
@@ -58,6 +59,28 @@ class AddHomework: UIViewController {
         other = otherTextField.text!        
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.classNamePicker.delegate = self
+        self.classNamePicker.dataSource = self
+        pickerData = ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6"]
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    
+    // The number of rows of data
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerData.count
+    }
+    
+    // The data to return for the row and component (column) that's being passed in
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickerData[row]
+    }
+
     
 }
 
