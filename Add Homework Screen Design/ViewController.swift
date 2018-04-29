@@ -26,11 +26,9 @@ class AddHomework: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     
     //Assigned Date
     var assignedDate: String = ""
-    @IBOutlet weak var assignedDateTextField: UITextField!
     
     //Due Date
     var dueDate: String = ""
-    @IBOutlet weak var dueDateTextField: UITextField!
     
     //Description
     var descriptiontextbox: String = ""
@@ -49,10 +47,6 @@ class AddHomework: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         homeworkName = homeworkTitle.text!
         
         teacher = teacherTextField.text!
-        
-        assignedDate = assignedDateTextField.text!
-        
-        dueDate = dueDateTextField.text!
         
         descriptiontextbox = descriptionTextField.text!
         
