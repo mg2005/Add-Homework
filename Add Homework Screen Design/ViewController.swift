@@ -39,6 +39,8 @@ class AddHomework: UIViewController {
     var other: String = ""
     @IBOutlet weak var otherTextField: UITextField!
     
+    @IBOutlet weak var classNamePicker: UIPickerView!
+    
     //DONE
     @IBAction func DoneButton(_ sender: Any) {
         homeworkName = homeworkTitle.text!
