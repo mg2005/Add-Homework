@@ -75,6 +75,11 @@ class AddHomework: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         return pickerData[row]
     }
 
+    @IBOutlet weak var dueDatePicker: UIDatePicker!
+    
+    @IBAction func dueDateChanged(_ sender: UIDatePicker) {
+        print(sender.date)
+    }
     
 }
 
