@@ -57,7 +57,7 @@ class AddHomework: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         super.viewDidLoad()
         self.classNamePicker.delegate = self
         self.classNamePicker.dataSource = self
-        pickerData = ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6"]
+        pickerData = ["Math", "English", "History", "Science", "Music", "Art"]
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
